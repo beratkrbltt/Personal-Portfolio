@@ -1,0 +1,198 @@
+.about-sec {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 64px;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 96px 60px;
+    box-sizing: border-box;
+    background: #0a0a0a;
+    color: #ededed;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: #77776f;
+}
+
+.eyebrow-tag {
+    color: #9ee84f;
+}
+
+.eyebrow-line {
+    width: 28px;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.about-sec-copy {
+    flex: 1;
+    max-width: 620px;
+}
+
+.about-sec-heading {
+    margin: 0 0 24px;
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #f4f2ec;
+}
+
+.about-sec-heading em {
+    font-style: italic;
+    color: #d9d6cd;
+}
+
+.about-sec-text {
+    max-width: 590px;
+    margin: 0 0 18px;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.9;
+    color: #7c88a3;
+}
+
+.about-sec-text .hl {
+    color: #e0935f;
+}
+
+.stat-card {
+    flex: 0 0 340px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 340px;
+    background: #111114;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.stat-cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 120px;
+    padding: 26px 30px;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat-cell:nth-child(2n) {
+    border-right: none;
+}
+
+.stat-cell:nth-child(n + 3) {
+    border-bottom: none;
+}
+
+.stat-number {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #f4f2ec;
+}
+
+.stat-label {
+    margin-top: 7px;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #77776f;
+}
+
+@media (max-width: 900px) {
+    .about-sec {
+        gap: 10px;
+        padding: 80px 30px;
+    }
+
+    .about-sec-copy {
+        max-width: 450px;
+    }
+
+    .about-sec-heading {
+        font-size: 38px;
+    }
+
+    .about-sec-text {
+        max-width: 650px;
+    }
+
+    .stat-card {
+        margin-top: 50px;
+        max-width: 210px;
+        flex: none;
+    }
+
+    .stat-cell {
+        padding: 10px;
+    }
+
+    .stat-number {
+        font-size: 20px;
+    }
+
+    .stat-label {
+        margin-top: 7px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .about-sec {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 20px;
+        gap: 40px;
+    }
+
+    .stat-card {
+        margin-top: 0px;
+        max-width: 80%;
+        flex: none;
+    }
+
+    .about-sec-heading {
+        font-size: 32px;
+        line-height: 1.25;
+    }
+
+    .about-sec-text {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .stat-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat-cell {
+        min-height: 50px;
+        padding: 5px 10px;
+    }
+
+    .stat-number {
+        font-size: 22px;
+    }
+
+    .stat-label {
+        font-size: 13px;
+    }
+}

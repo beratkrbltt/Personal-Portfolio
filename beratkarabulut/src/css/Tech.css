@@ -1,0 +1,250 @@
+.tech-sec {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 80px;
+    margin: 0 auto;
+    padding: 96px 60px;
+    box-sizing: border-box;
+    background: #0a0a0a;
+    color: #ededed;
+    width: 100%;
+    max-width: 1280px;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: #77776f;
+}
+
+.eyebrow-tag {
+    color: #9ee84f;
+}
+
+.eyebrow-line {
+    width: 28px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.tech-sec-copy {
+    flex: 0 0 280px;
+    width: 280px;
+}
+
+.tech-sec-heading {
+    margin: 0;
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #f4f2ec;
+}
+
+.tech-sec-heading em {
+    font-style: italic;
+    color: #d9d6cd;
+}
+
+.tech-groups {
+    flex: 1;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.tech-group-label {
+    display: block;
+    margin-bottom: 14px;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 10.5px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6b6b66;
+}
+
+.tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    border: 1px solid;
+    border-radius: 8px;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 12px;
+    font-weight: 400;
+    background: rgba(255, 255, 255, 0.02);
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.pill:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.pill-amber {
+    color: #e0935f;
+    border-color: rgba(224, 147, 95, 0.35);
+}
+
+.pill-amber:hover {
+    border-color: rgba(224, 147, 95, 0.65);
+}
+
+.pill-blue {
+    color: #7aa2f7;
+    border-color: rgba(122, 162, 247, 0.35);
+}
+
+.pill-blue:hover {
+    border-color: rgba(122, 162, 247, 0.65);
+}
+
+.pill-green {
+    color: #9ee84f;
+    border-color: rgba(158, 232, 79, 0.35);
+}
+
+.pill-green:hover {
+    border-color: rgba(158, 232, 79, 0.65);
+}
+
+.pill-purple {
+    color: #bb9af7;
+    border-color: rgba(187, 154, 247, 0.35);
+}
+
+.pill-purple:hover {
+    border-color: rgba(187, 154, 247, 0.65);
+}
+
+.pill-red {
+    color: #f7768e;
+    border-color: rgba(247, 118, 142, 0.35);
+}
+
+.pill-red:hover {
+    border-color: rgba(247, 118, 142, 0.65);
+}
+
+@media (max-width: 900px) {
+
+    .tech-sec {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        flex-direction: row;
+        align-items: flex-start;
+
+        gap: 32px;
+        padding: 64px 32px;
+    }
+
+    .tech-sec-copy {
+        flex: 0 1 200px;
+        width: auto;
+        min-width: 0;
+    }
+
+    .tech-sec-heading {
+        font-size: 30px;
+    }
+
+    .tech-groups {
+        flex: 1 1 0;
+        width: 0;
+        max-width: none;
+        min-width: 0;
+
+        gap: 28px;
+    }
+
+    .tech-group {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .tech-pills {
+        width: 100%;
+        min-width: 0;
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .pill {
+        max-width: 100%;
+        box-sizing: border-box;
+
+        padding: 7px 11px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .tech-sec {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 44px;
+        padding: 56px 24px;
+    }
+
+    .tech-sec-copy {
+        flex: none;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .tech-sec-heading {
+        font-size: 30px;
+    }
+
+    .tech-groups {
+        width: 100%;
+        min-width: 0;
+        gap: 28px;
+    }
+
+    .tech-group {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .tech-pills {
+        width: 100%;
+        min-width: 0;
+        gap: 8px;
+    }
+
+    .pill {
+        padding: 7px 10px;
+        font-size: 11px;
+    }
+}

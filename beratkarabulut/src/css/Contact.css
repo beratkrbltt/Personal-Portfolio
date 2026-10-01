@@ -1,0 +1,246 @@
+.contact {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 40px;
+  box-sizing: border-box;
+  background: #0a0a0a;
+  color: #ededed;
+}
+
+.contact__inner {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.contact__title {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #f4f2ec;
+}
+
+.contact__title em {
+  font-style: italic;
+  color: #d9d6cd;
+}
+
+.contact__text {
+  font-size: 15.5px;
+  line-height: 1.7;
+  margin: 10px 0;
+  color: #8f8f8a;
+  max-width: 30rem;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field label {
+  color: #8b8b96;
+  font-size: 0.75rem;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.85rem 1rem;
+  background: #131313;
+  border: 1px solid #232323;
+  border-radius: 8px;
+  color: #ededed;
+  font: inherit;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #5a5a66;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: #b9f56a;
+}
+
+.field textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  min-height: 44px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 8px;
+  background: #9ee84f;
+  color: #0a0a0a;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form__button svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke-width: 2.2;
+}
+
+.info__label {
+  margin: 0 0 0.8rem;
+  color: #6f7aa8;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.info__label--spaced {
+  margin-top: 2.5rem;
+}
+
+.info__email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ededed;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.info__email:hover {
+  color: #b9f56a;
+}
+
+.info__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.info__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #8b8b96;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.info__links a:hover {
+  color: #ededed;
+}
+
+@media (max-width: 860px) {
+  .contact {
+    padding: 48px 32px;
+  }
+
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact__title {
+    font-size: clamp(2.7rem, 8vw, 4rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 40px 20px;
+  }
+
+  .contact__title {
+    font-size: clamp(2.4rem, 12vw, 3.3rem);
+  }
+
+  .contact__text {
+    margin: 1.25rem 0 2rem;
+    font-size: 0.9rem;
+  }
+
+  .contact__grid {
+    gap: 2rem;
+  }
+
+  .form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .field input,
+  .field textarea {
+    padding: 0.8rem 0.9rem;
+  }
+
+  .field textarea {
+    min-height: 120px;
+  }
+
+  .info__label--spaced {
+    margin-top: 2rem;
+  }
+
+  .info__email {
+    font-size: 1.25rem;
+  }
+}
+
+.field input:-webkit-autofill,
+.field input:-webkit-autofill:hover,
+.field input:-webkit-autofill:focus,
+.field input:-webkit-autofill:active,
+.field textarea:-webkit-autofill,
+.field textarea:-webkit-autofill:hover,
+.field textarea:-webkit-autofill:focus,
+.field textarea:-webkit-autofill:active {
+  -webkit-text-fill-color: #ededed;
+  -webkit-box-shadow: 0 0 0 1000px #131313 inset;
+  box-shadow: 0 0 0 1000px #131313 inset;
+  caret-color: #ededed;
+  transition: background-color 5000s ease-in-out 0s;
+}

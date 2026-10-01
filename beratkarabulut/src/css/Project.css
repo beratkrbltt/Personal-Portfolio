@@ -1,0 +1,244 @@
+.project-card {
+    background: #0f0f14;
+    border: 1px solid #2a2a33;
+    border-radius: 22px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card:hover {
+    border-color: rgba(163, 240, 77, 0.35);
+}
+
+.project-card__media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.project-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.project-card__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 55%, #0f0f14 100%);
+}
+
+.project-card__badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: rgba(60, 60, 68, 0.85);
+    color: #c9ccd6;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+}
+
+.project-card__body {
+    padding: 8px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+}
+
+.project-card__title {
+    margin: 0;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #f2f3f7;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.project-card__desc {
+    margin: 0;
+    color: #8a8fa3;
+    font-size: 1rem;
+    line-height: 1.7;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: calc(1.7em * 3);
+}
+
+.project-card__tags {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 68px;
+    align-content: flex-start;
+    overflow: hidden;
+}
+
+.project-card__tags li {
+    display: inline-flex;
+    align-items: center;
+    height: 30px;
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(163, 240, 77, 0.35);
+    background: rgba(163, 240, 77, 0.08);
+    color: #a3f04d;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+}
+
+.project-card__tags li:hover {
+    background: rgba(163, 240, 77, 0.16);
+}
+
+.project-card__links {
+    margin-top: auto;
+    padding-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.project-card__links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+}
+
+.project-card__demo {
+    color: #a3f04d;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.project-card__github {
+    color: #8a8fa3;
+    font-weight: 500;
+}
+
+.project-card__links a:hover {
+    opacity: 0.8;
+}
+
+.project-card__demo svg {
+    transition: transform 0.2s;
+}
+
+.project-card__demo:hover svg {
+    transform: translate(2px, -2px);
+}
+
+.project-card__demo:hover svg {
+    transform: translate(2px, -2px);
+}
+
+
+/* Tablet */
+@media (max-width: 768px) {
+    .project-card {
+        border-radius: 18px;
+    }
+
+    .project-card__badge {
+        top: 12px;
+        left: 12px;
+        padding: 5px 14px;
+        font-size: 0.75rem;
+    }
+
+    .project-card__body {
+        padding: 8px 22px 22px;
+        gap: 14px;
+    }
+
+    .project-card__title {
+        font-size: 1.4rem;
+    }
+
+    .project-card__desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        min-height: calc(1.6em * 3);
+    }
+
+    .project-card__tags {
+        min-height: 62px;
+    }
+
+    .project-card__tags li {
+        height: 28px;
+        padding: 0 12px;
+        font-size: 0.74rem;
+    }
+
+    .project-card__links {
+        gap: 20px;
+    }
+}
+
+/* Mobil */
+@media (max-width: 480px) {
+    .project-card {
+        border-radius: 16px;
+    }
+
+    .project-card__media {
+        aspect-ratio: 3 / 2;
+    }
+
+    .project-card__badge {
+        top: 10px;
+        left: 10px;
+        padding: 4px 12px;
+        font-size: 0.7rem;
+    }
+
+    .project-card__body {
+        padding: 6px 18px 18px;
+        gap: 12px;
+    }
+
+    .project-card__title {
+        font-size: 1.25rem;
+    }
+
+    .project-card__desc {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        min-height: calc(1.6em * 3);
+    }
+
+    .project-card__tags {
+        gap: 6px;
+        min-height: 58px;
+    }
+
+    .project-card__tags li {
+        height: 26px;
+        padding: 0 10px;
+        font-size: 0.7rem;
+    }
+
+    .project-card__links {
+        gap: 16px;
+        font-size: 0.9rem;
+    }
+}
