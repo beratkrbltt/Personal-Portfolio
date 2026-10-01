@@ -31,6 +31,7 @@ https://beratkarabulutt.web.app/
 * Yup
 * EmailJS
 * Firebase Hosting
+* MUI
 * CSS
 
 ---
