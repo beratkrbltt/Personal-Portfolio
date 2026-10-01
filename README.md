@@ -261,12 +261,6 @@ That's all that is required to install the dependencies and run the project loca
 
 ---
 
-Replace the values with your own EmailJS credentials.
-
-> Service credentials are intentionally not included in this repository. If you want to test the contact form, configure EmailJS with your own service, template and public key.
-
----
-
 ## 📌 Purpose
 
 This project was developed as a personal portfolio and as a practical application of modern frontend development concepts.
