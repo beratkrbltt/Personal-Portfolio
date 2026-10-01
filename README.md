@@ -8,7 +8,7 @@ The project is deployed using **Firebase Hosting**.
 
 ## 🎥 Preview
 
-![Portfolio Preview](GupseCafe.gif)
+![Portfolio Preview](portfolyo.gif)
 
 ---
 
