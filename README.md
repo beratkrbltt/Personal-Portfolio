@@ -2,9 +2,15 @@
 
 A modern, responsive personal portfolio website built with **React and TypeScript**.
 
-The project brings together personal information, skills and projects in a single-page interface. Project information is dynamically retrieved from GitHub repositories and enriched with locally defined metadata such as images, categories, technologies and live demo URLs.
+The application presents personal information, technical skills, selected projects and contact information in a single-page interface. Project data is partially retrieved dynamically from GitHub and combined with locally defined metadata for presentation.
 
-The application is deployed using **Firebase Hosting**.
+The project is deployed using **Firebase Hosting**.
+
+## 🎥 Preview
+
+![Portfolio Preview](GupseCafe.gif)
+
+---
 
 ## 🌐 Live Demo
 
@@ -31,90 +37,82 @@ https://beratkarabulutt.web.app/
 
 ## ✨ Features
 
+### Single-Page Component Architecture
+
+The portfolio is structured as a single-page application with independent React components for each major section.
+
+The main page is composed of sections such as:
+
+* Hero
+* About
+* Technologies
+* Projects
+* Contact
+
+Each section is implemented independently and integrated into the main application, keeping the structure modular and easier to maintain.
+
+---
+
 ### GitHub API Integration
 
-Project repositories are retrieved dynamically from GitHub using the GitHub API.
+Project information is retrieved dynamically from GitHub using the GitHub API.
 
 The application uses:
 
 * Axios for HTTP requests
-* `createAsyncThunk` for asynchronous Redux operations
-* GitHub repository topics for project filtering
-* Repository metadata such as name, description and URL
+* `createAsyncThunk` for asynchronous operations
+* GitHub repository topics for filtering
+* Repository information such as name, description and URL
 
-The data received from GitHub is matched with locally defined project metadata to provide additional information such as:
+The data retrieved from GitHub is combined with locally defined project metadata. This metadata provides presentation-specific information such as:
 
 * Project image
-* Project category
+* Category
 * Technologies
 * Display order
 * Live demo URL
 
-This approach allows the portfolio to dynamically reflect repository data while keeping presentation-specific information under application control.
-
----
-
-### Component-Based Architecture
-
-The application follows a component-based React structure.
-
-Each major section of the portfolio is implemented as a separate component and combined into a single-page interface.
-
-This structure helps keep the application:
-
-* Modular
-* Maintainable
-* Reusable
-* Easier to extend
+This approach keeps the project content dynamic while allowing additional presentation data to be managed independently from the GitHub repositories.
 
 ---
 
 ### Project Showcase
 
-Projects are displayed through an interactive **Swiper** slider.
+Selected projects are displayed through an interactive **Swiper** slider.
 
-Each project card receives its data through props and presents information such as:
+Project cards receive their data through props and display relevant information such as project name, description, technologies and available links.
 
-* Project name
-* Description
-* Category
-* Technologies
-* Repository
-* Live demo
-
-The project data is separated from the UI components to keep content and presentation logic independent.
+Project-specific presentation data is maintained separately in the application's data layer rather than being directly embedded inside the components.
 
 ---
 
 ### Redux Toolkit
 
-Redux Toolkit is used for centralized state management.
+**Redux Toolkit** is used for centralized state management.
 
-Asynchronous operations are handled with `createAsyncThunk`, particularly for GitHub API requests and contact form related state.
+Asynchronous operations are handled using `createAsyncThunk`, including GitHub API requests and contact-related operations.
 
-The application also manages different request states, including loading states, so that asynchronous operations are properly reflected in the UI.
+The Redux state also manages request statuses such as loading and completion states, allowing the interface to respond appropriately while asynchronous operations are in progress.
 
 ---
 
 ### Contact Form
 
-The contact section uses a combination of:
+The contact section integrates several tools for form management and communication:
 
 * **Formik** for form state management
-* **Yup** for validation
+* **Yup** for form validation
 * **EmailJS** for sending messages
 
-Form validation is handled before submitting the request, providing users with immediate feedback for invalid or missing fields.
-
-The contact-related asynchronous state is also managed through Redux.
+Validation is performed before submission, while asynchronous contact operations are handled through the application's state management structure.
 
 ---
 
 ### TypeScript
 
-TypeScript is used throughout the application to improve type safety and maintainability.
+TypeScript is used throughout the application to provide type safety and maintainable data structures.
 
-Custom types and interfaces are defined for application data, including project metadata and component props.
+Custom types are defined for application data, component props and project metadata.
 
 Example:
 
@@ -129,7 +127,7 @@ export const projectMeta: Record<string, ProjectMeta> = {
 };
 ```
 
-This allows project data to remain structured and predictable throughout the application.
+This keeps project-related data structured and predictable throughout the application.
 
 ---
 
@@ -140,7 +138,12 @@ A simplified version of the project structure:
 ```text
 src/
 ├── components/
-│   ├── ...
+│   ├── Hero/
+│   ├── About/
+│   ├── Tech/
+│   ├── Projects/
+│   ├── Contact/
+│   └── ...
 │
 ├── data/
 │   ├── projectMeta.ts
@@ -160,13 +163,13 @@ src/
 └── main.tsx
 ```
 
-The project is organized around reusable components, centralized state management, typed data structures and separated project metadata.
+The application separates UI components, project data, images, Redux logic and TypeScript definitions into dedicated areas.
 
 ---
 
 ## 🔄 Data Flow
 
-The project data flow can be summarized as:
+The GitHub-related data flow can be summarized as:
 
 ```text
 GitHub API
@@ -181,22 +184,20 @@ Repository / Topic Filtering
     ↓
 Project Metadata Matching
     ↓
-Project Components
+React Components
     ↓
-Swiper Project Cards
+Project Cards
 ```
 
-Locally defined metadata is used to supplement the information returned from GitHub.
-
-For example, a GitHub repository can be matched with metadata containing its project image, category and technology stack.
+GitHub repository data is combined with locally defined metadata before being passed to the relevant components.
 
 ---
 
 ## 📋 Project Metadata
 
-Project-specific presentation data is maintained separately from the components.
+Project-specific presentation data is maintained separately from the UI components.
 
-Example metadata includes:
+Example metadata:
 
 ```ts
 {
@@ -208,24 +209,23 @@ Example metadata includes:
 }
 ```
 
-This separation makes it possible to modify project information without changing the component implementation.
+This separation allows project information such as images, categories and display order to be updated without modifying the component implementation.
 
 ---
 
 ## ⚡ Loading States
 
-Since the application performs asynchronous operations, loading states are handled within the Redux state.
+The application handles asynchronous operations through explicit loading states.
 
-This prevents the UI from appearing unresponsive while repository or contact-related operations are in progress.
+Loading information is stored within the Redux state and used by the UI to provide appropriate feedback while data is being retrieved or operations are being processed.
 
 ---
 
 ## 🚀 Deployment
 
-The application is deployed with **Firebase Hosting**.
+The application is deployed using **Firebase Hosting**.
 
-The production version is available at:
-
+**Production:**
 https://beratkarabulutt.web.app/
 
 ---
@@ -244,7 +244,7 @@ Navigate to the project directory:
 cd <project-directory>
 ```
 
-Install dependencies:
+Install the dependencies:
 
 ```bash
 npm install
@@ -256,24 +256,13 @@ Start the development server:
 npm run dev
 ```
 
-The application will then be available through the local development server.
+That's all that is required to install the dependencies and run the project locally.
 
 ---
 
-## 🔐 Environment Variables
+Replace the values with your own EmailJS credentials.
 
-If environment variables are required for API or third-party service configuration, create a `.env` file based on the project's environment configuration.
-
-Example:
-
-```env
-VITE_GITHUB_TOKEN=your_github_token
-VITE_EMAILJS_SERVICE_ID=your_service_id
-VITE_EMAILJS_TEMPLATE_ID=your_template_id
-VITE_EMAILJS_PUBLIC_KEY=your_public_key
-```
-
-> Never commit private API keys, tokens or other sensitive credentials to the repository.
+> Service credentials are intentionally not included in this repository. If you want to test the contact form, configure EmailJS with your own service, template and public key.
 
 ---
 
@@ -285,8 +274,9 @@ The main focus areas include:
 
 * React component architecture
 * TypeScript
-* State management with Redux Toolkit
+* Redux Toolkit
 * REST API integration
+* GitHub API integration
 * Asynchronous data handling
 * Form management and validation
 * Third-party service integration
